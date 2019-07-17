@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/backGround">
+
+    <Button
+        android:id="@+id/Btn_Send_Request"
+        android:layout_width="171dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/submit"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.628" />
+
+    <EditText
+        android:id="@+id/country_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/editText"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_x="72dp"
+        android:layout_y="266dp"
+        android:ems="10"
+        android:hint="@string/phone_number"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/Btn_Send_Request"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.331"
+        />
+
+    <EditText
+        android:id="@+id/veryfyCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:hint="@string/verify_code"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/Btn_Send_Request"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintVertical_bias="0.24" />
+
+    <TextView
+        android:id="@+id/phone_Lbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/insert_number"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/editText"
+        app:layout_constraintEnd_toEndOf="@+id/editText"
+        app:layout_constraintStart_toStartOf="@+id/editText" />
+
+    <TextView
+        android:id="@+id/veryfy_Code_Lbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/send_code"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/veryfyCode"
+        app:layout_constraintEnd_toEndOf="@+id/veryfyCode"
+        app:layout_constraintStart_toStartOf="@+id/veryfyCode" />
+
+    <Button
+        android:id="@+id/Btn_Help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:drawableLeft="@drawable/ic_help"
+        android:text="@string/help"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/Btn_Send_Request"
+        app:layout_constraintEnd_toEndOf="@+id/veryfyCode"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/veryfyCode"
+        app:layout_constraintTop_toBottomOf="@+id/veryfyCode"
+        app:layout_constraintVertical_bias="0.149" />
+
+</android.support.constraint.ConstraintLayout>

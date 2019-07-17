@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">DeleteAccount</string>
+    <string name="help">Help</string>
+    <string name="submit">Send</string>
+    <string name="verify_code">Verify Code</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="insert_number">Please Insert Phone Number</string>
+    <string name="send_code">Verify Code Was Sent To Your Phone.</string>
+</resources>
