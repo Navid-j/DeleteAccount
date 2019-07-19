@@ -6,4 +6,7 @@
     <string name="phone_number">Phone Number</string>
     <string name="insert_number">Please Insert Phone Number</string>
     <string name="send_code">Verify Code Was Sent To Your Phone.</string>
+    <string name="first_step">قدم اول</string>
+    <string name="second_step">قدم دوم</string>
+    <string name="successful">حساب حذف شد.</string>
 </resources>

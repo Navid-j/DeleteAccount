@@ -7,6 +7,17 @@
     tools:context=".MainActivity"
     android:background="@color/backGround">
 
+    <TextView
+        android:id="@+id/stepLevel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/first_step"
+        android:textSize="70sp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/levelRed"
+        android:textStyle="bold"/>
+
     <Button
         android:id="@+id/Btn_Send_Request"
         android:layout_width="171dp"
@@ -19,18 +30,22 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.628" />
+        app:layout_constraintTop_toBottomOf="@id/stepLevel"
+        app:layout_constraintVertical_bias="0.656" />
 
     <EditText
         android:id="@+id/country_code"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="+98"
+        app:layout_constraintBottom_toBottomOf="@+id/editText"
         app:layout_constraintEnd_toStartOf="@id/editText"
+        app:layout_constraintHorizontal_bias="0.86"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="@+id/editText"
+        android:inputType="phone"/>
+
     <EditText
         android:id="@+id/editText"
         android:layout_width="wrap_content"
@@ -43,16 +58,15 @@
         android:layout_y="266dp"
         android:ems="10"
         android:hint="@string/phone_number"
-        android:inputType="textPersonName"
+        android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/Btn_Send_Request"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.331"
-        />
+        app:layout_constraintTop_toBottomOf="@id/stepLevel"
+        app:layout_constraintVertical_bias="0.331" />
 
     <EditText
-        android:id="@+id/veryfyCode"
+        android:id="@+id/verifyCode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -81,14 +95,14 @@
         app:layout_constraintStart_toStartOf="@+id/editText" />
 
     <TextView
-        android:id="@+id/veryfy_Code_Lbl"
+        android:id="@+id/verify_Code_Lbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/send_code"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/veryfyCode"
-        app:layout_constraintEnd_toEndOf="@+id/veryfyCode"
-        app:layout_constraintStart_toStartOf="@+id/veryfyCode" />
+        app:layout_constraintBottom_toTopOf="@+id/verifyCode"
+        app:layout_constraintEnd_toEndOf="@+id/verifyCode"
+        app:layout_constraintStart_toStartOf="@+id/verifyCode" />
 
     <Button
         android:id="@+id/Btn_Help"
@@ -100,10 +114,27 @@
         android:text="@string/help"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/Btn_Send_Request"
-        app:layout_constraintEnd_toEndOf="@+id/veryfyCode"
+        app:layout_constraintEnd_toEndOf="@+id/verifyCode"
         app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="@+id/veryfyCode"
-        app:layout_constraintTop_toBottomOf="@+id/veryfyCode"
+        app:layout_constraintStart_toStartOf="@+id/verifyCode"
+        app:layout_constraintTop_toBottomOf="@+id/verifyCode"
         app:layout_constraintVertical_bias="0.149" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/Btn_Send_Request"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Btn_Help">
+        <TextView
+            android:id="@+id/responseTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

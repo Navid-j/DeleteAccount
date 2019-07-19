@@ -6,6 +6,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -31,15 +33,22 @@ public class MainActivity extends AppCompatActivity {
 
         final Button button = findViewById(R.id.Btn_Send_Request);
         final EditText phoneNumber = findViewById(R.id.editText);
-        final EditText securityCode = findViewById(R.id.veryfyCode);
-        securityCode.setVisibility(View.INVISIBLE);
+        final EditText countryCode = findViewById(R.id.country_code);
+        final EditText securityCode = findViewById(R.id.verifyCode);
+        securityCode.setVisibility(View.GONE);
+        final TextView phoneLbl = findViewById(R.id.phone_Lbl);
+        final TextView verifyLbl = findViewById(R.id.verify_Code_Lbl);
+        verifyLbl.setVisibility(View.GONE);
+        final Button helpBtn = findViewById(R.id.Btn_Help);
+        helpBtn.setVisibility(View.GONE);
+        final TextView responseTV = findViewById(R.id.responseTV);
+        final TextView stepLevel = findViewById(R.id.stepLevel);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                number = "phone=" + phoneNumber.getText().toString();
+                number = "phone=" + countryCode.getText().toString() + phoneNumber.getText().toString();
                 url = "https://my.telegram.org/auth/send_password";
-
 
                 RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
                 StringRequest postRequest = new StringRequest(Request.Method.POST, url,
@@ -57,7 +66,12 @@ public class MainActivity extends AppCompatActivity {
                                     e.printStackTrace();
                                 }
                                 securityCode.setVisibility(View.VISIBLE);
+                                phoneLbl.setEnabled(false);
                                 phoneNumber.setEnabled(false);
+                                verifyLbl.setVisibility(View.VISIBLE);
+                                helpBtn.setVisibility(View.VISIBLE);
+                                stepLevel.setText(R.string.second_step);
+                                responseTV.setText(response);
                             }
                         },
                         new Response.ErrorListener()
